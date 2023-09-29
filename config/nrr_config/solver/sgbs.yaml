@@ -1,0 +1,11 @@
+# @package _global_
+# model parameters
+
+solver: 'sgbs'
+solver_cfg:
+  ckpt_pth: 'sgbs/ckpts/uchoa100/checkpoint-8100.pt'
+  cuda: True
+  mode: 'greedy'
+  beta: 4       # beam width
+  gamma: 4      # expansion factor
+  n_samples: 1024

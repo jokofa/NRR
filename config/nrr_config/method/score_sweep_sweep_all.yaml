@@ -1,0 +1,17 @@
+# @package _global_
+# model parameters
+
+nrr_cfg:
+  init_method: 'sweep'
+  init_method_cfg: #
+  sg_construction_method: 'sweep'
+  sg_construction_method_cfg:
+    n_target: 100
+    sweep_direction: 'both'
+    alpha: 1.0
+  scoring_method: 'rnd'
+  scoring_method_cfg: #
+  sg_selection_method: 'multi'
+  sg_selection_method_cfg: #
+  accept_method: 'all'
+  accept_method_cfg: #

@@ -1,0 +1,39 @@
+# @package _global_
+
+enc: "gnn_pool"
+
+model_args:
+  input_dim: 9    # x, y, c_x, c_y, r, p, c_r, c_p, d
+  sg_meta_feature_dim: 6    # meta_iter, cost, x, y, d, size
+  embedding_dim: 128
+  knn: 25
+
+  # node encoder
+  node_encoder_args:
+    hidden_dim: 128
+    num_layers: 4
+    conv_type: "GraphConv"
+    activation: "relu"
+    skip: True
+    norm_type: "ln"
+    add_linear: False
+    dropout: 0.0
+    pooling_type:
+      - "sum"
+      - "std"
+    vertical_aggregation: True
+
+  # center encoder
+  sg_encoder_args:
+    hidden_dim: 128
+    num_layers: 3
+    pooling_type:
+      # sum and max pooling remain unchanged for 0 padding
+      # (assuming at least one positive value exists for max pool,
+      # but that should be OK for a ReLU network)
+      - "sum"
+      - "max"
+    pre_proj: False
+    post_proj: False
+    activation: "relu"
+    norm_type: "ln"

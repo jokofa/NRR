@@ -1,0 +1,6 @@
+# @package _global_
+# model parameters
+
+nrr_cfg:
+  sg_selection_method: 'sampling'
+  sg_selection_method_cfg: #

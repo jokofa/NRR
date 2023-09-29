@@ -1,0 +1,9 @@
+# @package _global_
+# model parameters
+
+nrr_cfg:
+  scoring_method: 'nsf'
+  scoring_method_cfg:
+    ckpt: nrr_checkpoints/final/nsf_sgbs_mixed500.ckpt
+    cuda: True
+    knn: 25   # should be same as model used in training

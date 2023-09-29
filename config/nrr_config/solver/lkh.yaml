@@ -1,0 +1,9 @@
+# @package _global_
+# model parameters
+
+solver: 'lkh'
+solver_cfg:
+  lkh_exe_pth: 'lkh3/LKH-3.0.4/LKH'
+  max_trials: 100   # L2D: 500
+  max_num_workers: -1
+  time_limit: #

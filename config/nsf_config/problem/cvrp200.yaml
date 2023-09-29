@@ -1,0 +1,10 @@
+# @package _global_
+# problem args
+
+DSET: ""
+
+model_args:
+  problem: "cvrp"
+  graph_size: 200
+  train_dataset: data/_TEST/nrr_data_2_lkh_sweep_sweep_rnd_all_max_trials100.dat
+  val_dataset: data/_TEST/nrr_data_2_lkh_sweep_sweep_rnd_all_max_trials100.dat

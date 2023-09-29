@@ -1,0 +1,13 @@
+# @package _global_
+# problem args
+
+DSET: ""
+problem: "cvrp"
+graph_size: 500
+train_dataset: data/CVRP/cvrp500/data_train_seed111_size1000_mixed_random_k_variant.dat
+val_dataset: data/CVRP/cvrp500/data_val_seed222_size100_mixed_random_k_variant.dat
+test_dataset: data/CVRP/cvrp500/data_test_seed333_size100_mixed_random_k_variant.dat
+n_seeds: 3
+nrr_time_limit: 60
+nrr_max_iters: 10000
+dataset_size: 50

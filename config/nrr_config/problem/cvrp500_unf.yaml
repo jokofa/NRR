@@ -1,0 +1,8 @@
+# @package _global_
+# problem args
+
+DSET: ""
+problem: "cvrp"
+graph_size: 500
+train_dataset: data/CVRP/cvrp500/data_train_seed111_size1000_uniform_random_int.dat
+val_dataset: data/CVRP/cvrp500/data_val_seed222_size100_uniform_random_int.dat

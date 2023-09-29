@@ -1,0 +1,7 @@
+# @package _global_
+# model parameters
+
+nrr_cfg:
+  init_method: 'savings'
+  init_method_cfg:
+    savings_function: 'clarke_wright'

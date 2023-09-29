@@ -1,0 +1,6 @@
+# @package _global_
+
+debug_lvl: 0  # 0 disables debugging and verbosity completely, >1 activates additional debugging functionality
+log_lvl: INFO   # ERROR
+global_seed: 666
+dataset: ${test_dataset}

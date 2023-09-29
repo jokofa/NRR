@@ -1,0 +1,36 @@
+**.idea
+**__pycache__
+
+# latex stuff
+**.fdb_latexmk
+**.xml
+**.toc
+**.aux
+**.nav
+**.snm
+**.gz
+**.vrb
+**.out
+**.hid
+**.bcf
+**.bbl
+**.blg
+**.fls
+
+# image data
+**.html
+# log files
+**.log
+
+# directories
+results
+result
+outputs**
+run_log
+logs
+plots
+
+lkh3
+baselines/L2D
+
+

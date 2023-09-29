@@ -1,0 +1,10 @@
+# @package _global_
+
+debug_lvl: 0  # 0 disables debugging and verbosity completely, >1 activates additional debugging functionality
+log_lvl: INFO   # ERROR
+global_seed: 1234
+
+save_dir: "./data/scoring_data/"
+nrr_max_iters: 100
+
+# python sbatch.py -p CPU2 --venv nrr -r create_scoring_data.py -n lkh_score_sav_sw -c 20 --problem cvrp500_mixed --args "solver=lkh method=score_savings_sweep_all nrr_max_iters=64"

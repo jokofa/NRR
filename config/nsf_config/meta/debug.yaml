@@ -1,0 +1,72 @@
+# @package _global_
+# training (debug)
+
+# tensorboard --host localhost --port 8080 --logdir=./outputs
+run_type: "debug" # "test"
+debug_lvl: 1 # 0 disables debugging and verbosity completely, >1 activates additional debugging functionality
+global_seed: 1234
+
+# global logging
+log_lvl: DEBUG
+tb_log_path: 'logs/tb/'
+val_log_path: 'logs/val/'
+#test_log_path: 'logs/test/'
+
+#
+model_args:
+  seed: $(global_seed)
+  num_workers: 4
+  pin_memory: True
+
+  train_dataset_size: 80
+  train_batch_size: 20
+
+  val_dataset_size: 64
+  val_batch_size: 32
+
+  # optimizer args
+  # ==============================================
+  loss_fn: HuberLoss
+  optimizer: Adam
+  optimizer_cfg:
+    lr: 0.001
+    weight_decay: 0
+  scheduler_cfg:
+    schedule_type: "step"
+    decay: 0.75
+    decay_step: 35
+
+#
+trainer_args:
+  #resume_from_checkpoint: #None
+  accelerator: 'gpu' # 'cpu'
+  devices: 1
+  max_epochs: 3
+  check_val_every_n_epoch: 1
+
+  # misc
+  precision: 32
+  gradient_clip_val: 0.5    # grad clip l2 norm value
+  gradient_clip_algorithm: 'norm'
+  deterministic: False      # enables cudnn.deterministic
+  benchmark: True          # speed up in case input size is constant (cudnn.benchmark)
+
+  # train/val logging
+  log_every_n_steps: 20
+  enable_progress_bar: True
+
+  # profiling / debugging args
+  fast_dev_run: False #True          # fast debug run
+  device_stats: False #True
+  profiler: #"advanced"
+  overfit_batches: 0.0        # try repeatedly fitting on % of data, if it does not converge, there is a bug!
+  enable_model_summary: False #True
+
+# checkpointing
+checkpoint_path: 'checkpoints/'
+checkpoint_args:
+  save_last: True   # save last ckpt independent of val_cost
+  save_top_k: 2   # num checkpoints to keep, if None saves only last
+  monitor: "val_mae"    # quantity to monitor
+  mode: "min"
+  filename: "{epoch}_{val_mae:.4f}"

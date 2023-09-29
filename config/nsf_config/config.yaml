@@ -1,0 +1,49 @@
+# @package _global_
+# primary nsf_config file for experiments
+
+defaults:
+  - _self_
+  - hydra/job_logging: simple
+  - problem: sgbs_merged_500
+  - encoder: gnn_pool
+  - decoder: ff
+  - meta: train
+
+
+hydra:
+  # standard output path
+  # change with command line argument: hydra.run.dir=XXX
+  run:
+    dir: outputs/${run_type}/${DSET}${model_args.problem}_${model_args.graph_size}/${enc}_${dec}/${now:%Y-%m-%d_%H-%M-%S_%f}
+
+  # overwrite root log level
+  job_logging:
+    root:
+      level: ${log_lvl}
+
+  #
+  # help flag output. customize for application
+  help:
+    # App name, override to match the name your app is known by
+    app_name: ${hydra.job.name}.py - train or evaluate specified models according to nsf_config.
+
+    # Help header, customize to describe your app to your users
+    header: |
+      ${hydra.help.app_name}
+
+    footer: |
+      Use --hydra-help to view Hydra specific help
+
+    template: |
+      ${hydra.help.header}
+      == Configuration groups ==
+      Compose your configuration from those groups (group=option)
+
+      $APP_CONFIG_GROUPS
+
+      == Config ==
+      Override anything in the config (foo.bar=value)
+
+      $CONFIG
+
+      ${hydra.help.footer}

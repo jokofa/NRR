@@ -1,0 +1,6 @@
+# @package _global_
+# model parameters
+
+nrr_cfg:
+  init_method: 'sweep'
+  init_method_cfg: #

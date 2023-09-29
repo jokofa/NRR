@@ -1,0 +1,9 @@
+# @package _global_
+# model parameters
+
+nrr_cfg:
+  sg_construction_method: 'sweep'
+  sg_construction_method_cfg:
+    n_target: 100
+    sweep_direction: 'both'
+    alpha: 1.0

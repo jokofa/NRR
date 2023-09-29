@@ -1,0 +1,10 @@
+# @package _global_
+# problem args
+
+DSET: "sgbs_all_val10_seed1234_"
+
+model_args:
+  problem: "cvrp"
+  graph_size: 500
+  train_dataset: data/scoring_data/train_nrr_data_sgbs_all_val10_seed1234.npz
+  val_dataset: data/scoring_data/val_nrr_data_sgbs_all_val10_seed1234.npz

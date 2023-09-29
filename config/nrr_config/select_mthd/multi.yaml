@@ -1,0 +1,7 @@
+# @package _global_
+# model parameters
+
+nrr_cfg:
+  sg_selection_method: 'multi'
+  sg_selection_method_cfg:
+    n_select: 8

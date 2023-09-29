@@ -1,0 +1,14 @@
+# @package _global_
+# model parameters
+
+dec: "ff"
+
+# POLICY model
+model_args:
+  decoder_args:
+    hidden_dim: 256
+    comb_mode: "cat"
+    num_layers: 3
+    activation: "relu"
+    norm_type: "ln"
+    dropout: 0.1
