@@ -4,7 +4,7 @@ This is the repository accompanying our paper
 
 "Too Big, so Fail? -- Enabling Neural Construction Methods to Solve Large-Scale Routing Problems". 
 
-A pre-print of our paper can be found on [arxiv]().
+A pre-print of our paper can be found on [arxiv](https://arxiv.org/abs/2309.17089).
 
 
 ## Environment setup
